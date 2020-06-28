@@ -17,7 +17,7 @@ public struct AppStorage<Value>: DynamicProperty {
     @Binding public var projectedValue: Value
     public var wrappedValue: Value {
         get { projectedValue }
-        set { projectedValue = newValue }
+        nonmutating set { projectedValue = newValue }
     }
     private let store: UserDefaults
 }
