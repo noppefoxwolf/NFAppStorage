@@ -2,9 +2,11 @@
 
 Backport of @AppStorage to earlier iOS 13.
 
-# Usage
+# Installation
 
-You can install with Xcode SwiftPM.
+## Xcode SwiftPM
+
+Add the following to your Xcode:
 
 ![](https://github.com/noppefoxwolf/NFAppStorage/blob/master/.github/xcode.png)
 
