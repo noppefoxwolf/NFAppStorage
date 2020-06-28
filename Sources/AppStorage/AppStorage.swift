@@ -106,7 +106,7 @@ extension AppStorage where Value == String {
     public init(wrappedValue: Value, _ key: String, store: UserDefaults? = nil) {
         self.store = store ?? UserDefaults.standard
         self.key = key
-        if let value = self.store.object(forKey: key) as? Value {
+        if let value = self.store.string(forKey: key) {
             self.storage = .init(wrappedValue: value)
         } else {
             self.storage = .init(wrappedValue: wrappedValue)
@@ -127,7 +127,7 @@ extension AppStorage where Value == URL {
     public init(wrappedValue: Value, _ key: String, store: UserDefaults? = nil) {
         self.store = store ?? UserDefaults.standard
         self.key = key
-        if let value = self.store.object(forKey: key) as? Value {
+        if let value = self.store.url(forKey: key) {
             self.storage = .init(wrappedValue: value)
         } else {
             self.storage = .init(wrappedValue: wrappedValue)
@@ -153,7 +153,7 @@ extension AppStorage where Value == Data {
     public init(wrappedValue: Value, _ key: String, store: UserDefaults? = nil) {
         self.store = store ?? UserDefaults.standard
         self.key = key
-        if let value = self.store.object(forKey: key) as? Value {
+        if let value = self.store.data(forKey: key) {
             self.storage = .init(wrappedValue: value)
         } else {
             self.storage = .init(wrappedValue: wrappedValue)
@@ -311,7 +311,7 @@ extension AppStorage where Value == String? {
     public init(_ key: String, store: UserDefaults? = nil) {
         self.store = store ?? UserDefaults.standard
         self.key = key
-        if let value = self.store.object(forKey: key) as? Value {
+        if let value = self.store.string(forKey: key) {
             self.storage = .init(wrappedValue: value)
         } else {
             self.storage = .init(wrappedValue: nil)
@@ -333,7 +333,7 @@ extension AppStorage where Value == URL? {
     public init(_ key: String, store: UserDefaults? = nil) {
         self.store = store ?? UserDefaults.standard
         self.key = key
-        if let value = self.store.object(forKey: key) as? Value {
+        if let value = self.store.url(forKey: key) {
             self.storage = .init(wrappedValue: value)
         } else {
             self.storage = .init(wrappedValue: nil)
@@ -355,7 +355,7 @@ extension AppStorage where Value == Data? {
     public init(_ key: String, store: UserDefaults? = nil) {
         self.store = store ?? UserDefaults.standard
         self.key = key
-        if let value = self.store.object(forKey: key) as? Value {
+        if let value = self.store.data(forKey: key) {
             self.storage = .init(wrappedValue: value)
         } else {
             self.storage = .init(wrappedValue: nil)
