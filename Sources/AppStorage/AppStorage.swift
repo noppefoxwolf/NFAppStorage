@@ -13,17 +13,13 @@ import SwiftUI
 
 @frozen
 @propertyWrapper
-public struct AppStorage<Value> {
+public struct AppStorage<Value>: DynamicProperty {
     @Binding public var projectedValue: Value
     public var wrappedValue: Value {
         get { projectedValue }
         set { projectedValue = newValue }
     }
     private let store: UserDefaults
-    
-    public func update() {
-        store.synchronize()
-    }
 }
 
 /// String
