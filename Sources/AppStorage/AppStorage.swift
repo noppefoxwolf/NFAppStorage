@@ -15,7 +15,10 @@ import SwiftUI
 @propertyWrapper
 public struct AppStorage<Value> {
     @Binding public var projectedValue: Value
-    public var wrappedValue: Value { projectedValue }
+    public var wrappedValue: Value {
+        get { projectedValue }
+        set { projectedValue = newValue }
+    }
     private let store: UserDefaults
     
     public func update() {
