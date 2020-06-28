@@ -1,3 +1,8 @@
-# AppStorage
+# NFAppStorage
 
-A description of this package.
+Backport of @AppStorage to earlier iOS 13.
+
+# Usage
+
+You can install with Xcode SwiftPM.
+
