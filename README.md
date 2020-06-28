@@ -5,7 +5,7 @@ Backport of @AppStorage to earlier iOS 13.
 
 # Usage
 
-```
+```swift
 struct ContentView: View {
     @AppStorage("username") var username: String = "Anonymous"
 
