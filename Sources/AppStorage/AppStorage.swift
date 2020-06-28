@@ -32,7 +32,11 @@ public extension AppStorage where Value == String {
     init(wrappedValue: Value, _ key: String, store: UserDefaults? = nil) {
         self.store = store ?? UserDefaults.standard
         self.key = key
-        self.storage = .init(wrappedValue: wrappedValue)
+        if let value = self.store.object(forKey: key) as? Value {
+            self.storage = .init(wrappedValue: value)
+        } else {
+            self.storage = .init(wrappedValue: wrappedValue)
+        }
     }
     
     func update() {
